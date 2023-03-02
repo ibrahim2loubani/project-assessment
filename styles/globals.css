@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+.fade-in-section {
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-img {
+  opacity: 0;
+  animation: fade-down 1s ease-out forwards;
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------- Custom Checkbox -------------- */
+/* -------------- Custom Checkbox -------------- */
+
+.check-button {
+  display: block;
+  margin-top: 5px;
+}
+.check-button input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.check-button label {
+  position: relative;
+  cursor: pointer;
+  color: #3c5473;
+  font-size: 13px;
+}
+
+.check-button label:before {
+  content: '';
+  background-color: transparent;
+  border: 1px solid #3c5473;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 5px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 7px;
+  border-radius: 2px;
+}
+
+.check-button input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 4.5%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 9px;
+  border: solid #2abcbb;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* -------------- Hide Popup Scrollbar --------------- */
+/* -------------- Hide Popup Scrollbar --------------- */
+
+.hide-scroll::-webkit-scrollbar {
+  display: none !important;
+}
+
+.hide-scroll::-webkit-scrollbar-track {
+  display: none !important;
+}
+
+.hide-scroll::-webkit-scrollbar-thumb {
+  display: none !important;
+}
+
+/* -------------- Button Loader -------------- */
+/* -------------- Button Loader -------------- */
+
+.load {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  margin: auto;
+}
+
+.open {
+  border-top: 3px solid transparent !important;
+  animation: load-animate infinite linear 1s;
+}
+
+.is-loading .load {
+  display: block;
+}
+
+.is-loading span {
+  display: none;
+}
+
+@keyframes load-animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.sidebar-active {
+  background-color: white;
+  color: #162963;
+  border-radius: 0.5rem;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
